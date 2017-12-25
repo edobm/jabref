@@ -40,7 +40,7 @@ public class CustomJFXPanel extends JFXPanel {
     }
 
     public static JFXPanel wrap(Scene scene) {
-        JFXPanel container = OS.LINUX ? new CustomJFXPanel() : new JFXPanel();
+        JFXPanel container = create();
         DefaultTaskExecutor.runInJavaFXThread(() -> container.setScene(scene));
         return container;
     }
